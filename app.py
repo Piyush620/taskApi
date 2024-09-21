@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request,render_template
 from flask_cors import CORS
 import taskdata
 
@@ -6,11 +6,8 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS
 
 @app.route('/',methods = ['GET','POST'])
-def index():
-    return {
-        'status': 200,
-        'message':"App is running "
-    }
+def api_docs():
+    return render_template('index.html')
 
 @app.route('/timepass',methods=['GET'])
 def darukutta():

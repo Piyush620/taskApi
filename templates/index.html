@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Task API Documentation</title>
+    <!-- Bootstrap CDN for styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Task API Documentation</h1>
+        <p class="text-center">This API allows you to manage tasks by creating, updating, fetching, and deleting tasks.</p>
+        
+        <h2>Available Endpoints</h2>
+        
+        <div class="accordion" id="apiDocs">
+            <!-- Get all tasks -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        1. GET /gettasks
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#apiDocs">
+                    <div class="accordion-body">
+                        <p>Fetches all tasks from the list.</p>
+                        <p><strong>Response:</strong></p>
+                        <pre>[
+    {
+        "id": 1,
+        "name": "Task 1",
+        "description": "This is task 1"
+    },
+    ...
+]</pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add a task -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        2. POST /addtasks
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#apiDocs">
+                    <div class="accordion-body">
+                        <p>Adds a new task to the list.</p>
+                        <p><strong>Request Body:</strong></p>
+                        <pre>{
+    "id": 1,
+    "name": "New Task",
+    "description": "This is a new task"
+}</pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Update a task -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        3. PUT /updatetasks/&lt;task_id&gt;
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#apiDocs">
+                    <div class="accordion-body">
+                        <p>Updates an existing task by its ID.</p>
+                        <p><strong>Request Body:</strong></p>
+                        <pre>{
+    "name": "Updated Task",
+    "description": "This task has been updated"
+}</pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Delete a task -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        4. DELETE /deletetask/&lt;task_id&gt;
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#apiDocs">
+                    <div class="accordion-body">
+                        <p>Deletes a task by its ID.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Get task by name -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        5. GET /gettaskbyname/&lt;name&gt;
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#apiDocs">
+                    <div class="accordion-body">
+                        <p>Fetches a task by its name.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Get task by ID -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSix">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        6. GET /gettaskbyid/&lt;task_id&gt;
+                    </button>
+                </h2>
+                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#apiDocs">
+                    <div class="accordion-body">
+                        <p>Fetches a task by its ID.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS for Accordion -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
